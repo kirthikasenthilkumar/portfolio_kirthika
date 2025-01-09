@@ -1,0 +1,214 @@
+.works {
+  padding: 0 3rem 0 3rem;
+  display: flex;
+  height: 90vh;
+  margin-top: 4rem;
+
+  /* scroll */
+  align-items: center;
+  justify-content: space-between; /* Space between left and right sections */
+}
+
+/* Left Side */
+.awesome {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1; /* Allow equal space for both sections */
+}
+
+.awesome > :nth-child(1) {
+  color: var(--black);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.awesome > :nth-child(2) {
+  color: var(--orange);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.awesome > :nth-child(3) {
+  color: var(--gray);
+  font-size: 14px;
+  margin-top: 1rem;
+}
+.s-button {
+  width: 8rem;
+  height: 2rem;
+  margin-top: 4rem;
+}
+
+/* Right Side */
+.w-right {
+  position: relative;
+  flex: 1; /* Allow equal space for both sections */
+}
+
+.w-mainCircle {
+  left: 9rem;
+  position: relative;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 100%;
+  box-shadow: var(--smboxShadow);
+  top: 2rem;
+  background: white;
+  z-index: 2;
+}
+
+.w-mainCircle > * {
+  position: absolute;
+}
+
+.w-mainCircle > :nth-child(1) {
+  top: -3rem;
+  left: 6rem;
+}
+.w-mainCircle > :nth-child(2) {
+  left: -3rem;
+  top: 5rem;
+}
+.w-mainCircle > :nth-child(3) {
+  left: 6rem;
+  top: 5rem;
+}
+.w-mainCircle > :nth-child(4) {
+  left: 15rem;
+  top: 5rem;
+}
+.w-mainCircle > :nth-child(5) {
+  left: 6rem;
+  top: 13rem;
+}
+
+.w-secCircle {
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  border-radius: 100%;
+  border: 5px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: var(--smboxShadow);
+}
+
+.w-secCircle > img {
+  transform: scale(0.6);
+}
+
+.w-backCircle {
+  position: absolute;
+  height: 13rem;
+  width: 13rem;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.blueCircle {
+  background: #1949b8;
+  left: 18rem;
+  top: 0rem;
+}
+.yellowCircle {
+  background: #f5c32c;
+  left: 18rem;
+  top: 8rem;
+}
+
+/* Tablet View */
+@media screen and (max-width: 1024px) {
+  .works {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem;
+    gap: 3rem; /* Add spacing between sections */
+  }
+
+  .awesome > :nth-child(1),
+  .awesome > :nth-child(2) {
+    font-size: 2rem;
+  }
+
+  .w-right {
+    transform: scale(0.8); /* Adjust size for tablet view */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .works {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 3rem;
+  }
+
+  .awesome > :nth-child(1),
+  .awesome > :nth-child(2) {
+    font-size: 1.8rem;
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .w-right {
+    transform: scale(0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .w-mainCircle {
+    position: static;
+    margin: auto; /* Center circle */
+  }
+  .w-backCircle {
+    left: 0; /* Adjust placement */
+  }
+}
+
+/* Small Mobile View */
+@media screen and (max-width: 480px) {
+  .works {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .awesome > :nth-child(1),
+  .awesome > :nth-child(2) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .s-button {
+    width: 6rem;
+    height: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .w-right {
+    transform: scale(0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .w-mainCircle {
+    position: static;
+    margin: auto; /* Center circle */
+  }
+
+  .w-backCircle {
+    display: none; /* Hide background circles for better fit */
+  }
+
+  .blueCircle,
+  .yellowCircle {
+    display: none;
+  }
+}
